@@ -1,0 +1,24 @@
+{
+  "name": "unbrewed-deck-selector",
+  "version": "1.0.0",
+  "description": "Browse Unmatched Variants to play on unbrewed.online",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o docs",
+    "deploy": "npm run build && git add -A && git commit -m 'update' && git push",
+    "css:build": "node-sass --omit-source-map-url assets/sass/styles.scss public/css/styles.css",
+    "css:watch": "npm run css:build -- --watch"
+  },
+  "keywords": [
+    "unmatched"
+  ],
+  "author": "jollygrin",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.4.4",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
