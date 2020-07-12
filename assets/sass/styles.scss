@@ -15,6 +15,12 @@ body {
   background-color: $color-light;
 }
 
+#pickfighter {
+  color: $color-dark;
+  font-family: $font-title;
+  font-size: 2rem;
+}
+
 section#nav {
   min-height: 10vh;
   display: flex;
@@ -46,18 +52,34 @@ section#body {
   }
 }
 
+.flip-card-back .content {
+  color: $color-dark;
+  font-family: sans-serif;
+}
+
 footer {
   background-color: $color-dark;
   min-height: 20vh;
 }
 
+// DESKTOP
 @media (min-width: 600px) {
   section#body {
     grid-template-columns: 3rem 1fr 3rem;
   }
 }
+
+// MOBILE
 @media (max-width: 600px) {
   section#body {
     grid-template-columns: 1fr;
+
+    // & #tray {
+    //   row-gap: 0px;
+    // }
+  }
+
+  .buffer {
+    display: none;
   }
 }

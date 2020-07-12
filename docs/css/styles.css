@@ -79,11 +79,6 @@
 body {
   background-color: #e7cc98; }
 
-#pickfighter {
-  color: #48284f;
-  font-family: "Bebas Neue", cursive;
-  font-size: 2rem; }
-
 section#nav {
   min-height: 10vh;
   display: flex;
