@@ -34,7 +34,9 @@ export default class FlipcardContent extends Component {
             </div>
           </div>
           <div className='ability'>
-            <span>{this.props.deck.hero.specialAbility}</span>
+            <span>
+              {this.props.limit(this.props.deck.hero.specialAbility, 220)}
+            </span>
           </div>
           <div className='content-footer'>
             <a href={this.props.record.BGG} target='_blank'>

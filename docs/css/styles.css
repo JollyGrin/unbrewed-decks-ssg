@@ -494,7 +494,8 @@
         padding: 0.5em; }
 
 body {
-  background-color: #e7cc98; }
+  background-color: #e7cc98;
+  height: 100%; }
 
 #pickfighter {
   color: #48284f;
@@ -509,7 +510,6 @@ section#nav {
   place-content: space-evenly; }
 
 section#body {
-  min-height: 70vh;
   display: grid; }
   section#body #tray {
     background-color: #48284f;
@@ -530,7 +530,7 @@ section#body {
 
 footer {
   background-color: #48284f;
-  min-height: 20vh; }
+  height: 50vh; }
 
 @media (min-width: 600px) {
   section#body {

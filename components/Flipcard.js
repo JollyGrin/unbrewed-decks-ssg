@@ -6,12 +6,28 @@ export default class Flipcard extends Component {
     super(props);
   }
 
+  displayName(string, limit = 17) {
+    if (string.length > limit) {
+      let newString = string;
+
+      if (string.length > limit) {
+        newString = string.substring(0, limit) + '...';
+      }
+      return newString;
+    } else {
+      return string;
+    }
+  }
+
   render() {
     return (
       <Fragment>
         <div className='flip-card'>
           <div className='flip-card-inner'>
-            <div className='flip-card-front' title={this.props.deck.hero.name}>
+            <div
+              className='flip-card-front'
+              title={this.displayName(this.props.deck.hero.name)}
+            >
               <img
                 src={
                   this.props.record.IMGurl
@@ -26,6 +42,7 @@ export default class Flipcard extends Component {
                 deck={this.props.deck}
                 record={this.props.record}
                 copy={this.props.copy}
+                limit={this.displayName}
               />
             </div>
           </div>
