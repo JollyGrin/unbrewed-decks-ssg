@@ -9,8 +9,6 @@ export default class Flipcard extends Component {
   render() {
     return (
       <Fragment>
-        {/* {console.log('record', this.props.record)} */}
-        {console.log('deck', this.props.deck)}
         <div className='flip-card'>
           <div className='flip-card-inner'>
             <div className='flip-card-front' title={this.props.deck.hero.name}>
@@ -27,6 +25,7 @@ export default class Flipcard extends Component {
               <FlipcardContent
                 deck={this.props.deck}
                 record={this.props.record}
+                copy={this.props.copy}
               />
             </div>
           </div>

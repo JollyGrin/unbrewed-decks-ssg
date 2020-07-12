@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import Link from 'next/link';
 
 export default class FlipcardContent extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <Fragment>
@@ -41,7 +41,12 @@ export default class FlipcardContent extends Component {
               <i className='fas fa-file-alt'></i> BGG
             </a>
             <span>
-              <a className='button'>Copy Deck</a>
+              <a
+                className='button'
+                onClick={() => this.props.copy(this.props.deck)}
+              >
+                Copy Deck
+              </a>
             </span>
           </div>
         </div>
