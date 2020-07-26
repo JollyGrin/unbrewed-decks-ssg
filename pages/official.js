@@ -6,7 +6,7 @@ import { makeDeckObject } from '../lib/deckParse';
 import { ToastContainer, toast } from 'react-toastify';
 import CopyToClipboard from 'copy-text-to-clipboard';
 
-export default function Index({ gson, preview }) {
+export default function Official({ gson, preview }) {
   const copy = (string) => {
     toast(`
         Copied ${string.hero.name} to your clipboard! Paste into the deck simulator
@@ -47,7 +47,7 @@ export default function Index({ gson, preview }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const sheetsURL = process.env.URL;
+  const sheetsURL = process.env.OFFICIAL;
 
   const gson = await getData(sheetsURL);
 

@@ -5,6 +5,31 @@ export default class FlipcardContent extends Component {
     super(props);
   }
 
+  displaySidekickIcon(sidekick) {
+    const { name, isRanged, hp, quantity } = sidekick;
+
+    if (name.toLowerCase() === 'none') {
+      return;
+    }
+    if (quantity > 1) {
+      return <i className='fas fa-user-plus'></i>;
+    } else {
+      return <i className='fas fa-heart'></i>;
+    }
+  }
+  displaySidekickAmount(sidekick) {
+    const { name, isRanged, hp, quantity } = sidekick;
+
+    if (name.toLowerCase() === 'none') {
+      return;
+    }
+    if (quantity > 1) {
+      return quantity;
+    } else {
+      return hp;
+    }
+  }
+
   render() {
     return (
       <Fragment>
@@ -29,7 +54,9 @@ export default class FlipcardContent extends Component {
                 ) : (
                   <i className='fas fa-fist-raised' title='Melee'></i>
                 )}{' '}
-                <i className='fas fa-heart'></i> {this.props.deck.sidekick.hp}{' '}
+                {/* <i className='fas fa-heart'></i> {this.props.deck.sidekick.hp}{' '} */}
+                {this.displaySidekickIcon(this.props.deck.sidekick)}{' '}
+                {this.displaySidekickAmount(this.props.deck.sidekick)}
               </h1>
             </div>
           </div>
@@ -39,9 +66,13 @@ export default class FlipcardContent extends Component {
             </span>
           </div>
           <div className='content-footer'>
-            <a href={this.props.record.BGG} target='_blank'>
-              <i className='fas fa-file-alt'></i> BGG
-            </a>
+            {this.props.record.BGG ? (
+              <a href={this.props.record.BGG} target='_blank'>
+                <i className='fas fa-file-alt'></i> BGG
+              </a>
+            ) : (
+              ' '
+            )}
             <span>
               <a
                 className='button'
